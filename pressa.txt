@@ -36,9 +36,14 @@ post: /events {personality,
     description,
     body}
 
-delete: /admin/events/:event_id
+PS: event ni admin tasdiqlash uchun /admin/events ga borib osha /:event_id si boyicha body dan statusini ozgartiradi
+token bolishi shart !
+
+2) /events/:event_id event view qilinganda ip address ip_address table ga saqlanadi . Cheating qilish mumkin dib nakrutka qilsangiz oxshamaydi 😁
 
 img:
-
 post: /event/images/:event_id { image [from files]}
 
+ip address:
+
+/address [checktoken kerak]
