@@ -5,6 +5,8 @@ import controller from "./controller.js";
 const router = Router()
 
 router.get('/address', checkToken, controller.GETIPADDRESS)
+
+router.get('/events', controller.GET)
 router.get('/events/:event_id', controller.GET)
 
 router.get('/admin/events/:event_id', checkToken, controller.ADMINGET)

@@ -21,7 +21,7 @@ const ADMINGET = async(req, res) => {
 
 const GET = async(req, res) => {
     try {
-        let events = await model.GET(req.params)
+        let events = await model.GET(req.params, req.query)
         let getIp = await model.GETIP()
         if (!events) {
             return res.send({

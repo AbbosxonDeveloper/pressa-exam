@@ -21,10 +21,13 @@ const ADMINGET = async({ event_id = '' }) => {
     }
 }
 
-const GET = async({ event_id = '' }) => {
+const GET = async({ event_id = '' }, { limit, page }) => {
     try {
         let events = await fetchAll(GETEVENTS)
         let images = await fetchAll(GETIMAGES)
+        if (limit && page) {
+            events = events.splice((limit * page) - 1, limit * page)
+        }
 
         events = events.filter(category => category.status == 'active')
         events = events.map(event => {
